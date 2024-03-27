@@ -49,14 +49,6 @@ Na entrega vocês devem utilizar o ADC para definir qual cor será exibida no LE
 
 ## Entrega
 
-### Funcionalidade
-
-A entrega deve ser um sistema embarcado que aciona um LED RGB com três PWMs usando como base a leitura de um valor analógico via AFEC.
-
-[![](https://img.youtube.com/vi/4Q7mcvLPfJ4/maxresdefault.jpg)](https://youtu.be/4Q7mcvLPfJ4)
-
-### Firmware
-
 Vocês devem desenvolver o firmware como indicado a seguir:
 
 ![](firmware.png)
@@ -114,41 +106,13 @@ Onde:
     void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b )`
     ```
 
-### Por onde começar?
-
-LEIA TODOS OS PASSOS ANTES DE SAIR FAZENDO, TENHA UMA VISÃO GERAL DO TODO ANTES DE COMECAR.
-
-1. Conecte os LEDs
-1. crie a `led_task` e faca .
-   - Lembre de validar!
-
-1. No final do README do PWM tem uma explicacão de como configurar outro pino para funcionar com PWM canal 1.
-   - Conecte outra cor do LED RGB e faća ele ser controlado por outro PWM.
-   
-1. Agora você só precisa de mais um pino PWM, mas é por sua conta de como fazer.
-   - No README do PWM tem como escolher outro pino
-   - Conecte a cor restante e faca ela funcionar com um novo PWM, use o canal 2 do PWM0
-   - **IMPORTANTE: NÃO USE O PINO PB4**, pois ele é o mesmo da UART
-
-1. Parta para a `task_afec`, configure o RTT, AFEC, envio da leitura para a fila `xQueueAFEC`
-
-1. Converta o valor do AFEC de `0..4095` para `0..255` (o wheel recebe um char!)
-
-1. Implemente a função `void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b )`
-   - Se quiser debugar, printf ajuda!
-
-1. Chame a função `wheel` passando o valor do AFEC já corrigido para `0..255`.
-   - Imprima no terminal os valores convertidos de RGB para validar!
-
-1. Crie a fila `xQueueRGB` e faća o envio do valor `RGB` para a fila
-   - Note que você precisa enviar os valores de RGB, use uma fila de struct para isso!
-
-1. Na `task_led` leia o valor que está chegando na fila e configure cada um dos canais do `PWM` para acionar o duty cycle recebido.
-
 ## Rubrica
 
-- [ ] LED varia de acordo com potenciômetro respeitando a função `wheel` (gradual do vermelho, passando pelo roxo, azul, verde, amarelo, vermelho)
-- [ ] `task_afec` e `task_led` implementadas
-- [ ] RTT para dar a frequência de amostragem do AFEC (10Hz)
-- [ ] `wheel` implementado e sendo usado na `task_afec`
-- [ ] `xQueueAFEC` e `xQueueRGB` usados para enviar dados (conversaor e RGB)
+LED varia de acordo com potenciômetro respeitando a função `wheel` (gradual do vermelho, passando pelo roxo, azul, verde, amarelo, vermelho), com:
+
+- [ ] `task_adc` e `task_led` implementadas
+- [ ] O LED é controlado por 3 PWM um para cada cor
+- [ ] Timer callback para fazer leitura do ADC (5Hz)
+- [ ] Fila `xQueueADC` para envio do dado do adc
+- [ ] `wheel` implementado e sendo usado na `task_adc`
+- [ ] `xQueueADC` e `xQueueRGB` usados para enviar dados (ADC e RGB)
