@@ -71,7 +71,7 @@ Onde:
     - Fila que possibilita o envio e recebimento do valor RGB
     - A fila deve ser de uma `struct` que possibilita enviar o **RGB**
     
-  - `task_led`
+- `task_led`
     - Configura os três pinos para operar com PWM
     - recebe um dado na fila `xQueueRGB` e altera o duty cycle de cada PWM de acordo com o valor recebido
     
