@@ -51,7 +51,7 @@ Na entrega vocês devem utilizar o ADC para definir qual cor será exibida no LE
 
 Vocês devem desenvolver o firmware como indicado a seguir:
 
-![](firmware.png)
+![](imgs/firmware.png)
 
 Onde:
 
