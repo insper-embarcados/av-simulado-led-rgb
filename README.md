@@ -1,8 +1,8 @@
 # Simulado - AV - pico - LED RGB
 
-> LEIA TODOS OS PASSOS ANTES DE SAIR FAZENDO, TENHA UMA VISÃO GERAL DO TODO ANTES DE COMECAR.
-
 Nesta avaliação vocês irão criar firmware que aciona um LED RGB de acordo com o valor de um potenciômetro. 
+
+**SOLUCÃO NA BRANCH SOLUTION**
 
 ## Descricão
 
