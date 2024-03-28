@@ -102,6 +102,8 @@ Onde:
     }
     ```
     
+PWM em múltiplos pinos, consulte o site da matéria [RP2040/pwm](https://insper-embarcados.github.io/site/rp2040/rp2040-pwm/), que eu adicionei um material novo lá vai ajudar com isso.
+    
 ## Rubrica
 
 LED varia de acordo com potenciômetro respeitando a função `wheel` (gradual do vermelho, passando pelo roxo, azul, verde, amarelo, vermelho), com:
