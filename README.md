@@ -106,6 +106,8 @@ PWM em múltiplos pinos, consulte o site da matéria [RP2040/pwm](https://insper
     
 ## Rubrica
 
+[https://www.youtube.com/watch?v=jiLNpsL1ZLw](https://www.youtube.com/watch?v=jiLNpsL1ZLw)
+
 LED varia de acordo com potenciômetro respeitando a função `wheel` (gradual do vermelho, passando pelo roxo, azul, verde, amarelo, vermelho), com:
 
 - [ ] `task_adc` e `task_led` implementadas
