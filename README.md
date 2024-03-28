@@ -82,28 +82,30 @@ Onde:
     ```c
     // Input a value 0 to 255 to get a color value.
     // The colours are a transition r - g - b - back to r.
-    uint32_t Wheel( byte WheelPos ) {
+    void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b )`
       WheelPos = 255 - WheelPos;
 
       if ( WheelPos < 85 ) {
-        setColor( 255 - WheelPos * 3, 0, WheelPos * 3 );
+        *r = 255 - WheelPos * 3;
+        *g =0;
+        *b = WheelPos * 3;
       } else if( WheelPos < 170 ) {
         WheelPos -= 85;
-        setColor( 0, WheelPos * 3, 255 - WheelPos * 3 );
+        *r = 0;
+        *g = WheelPos * 3;
+        *b = 255 - WheelPos * 3;
       } else {
         WheelPos -= 170;
-        setColor( WheelPos * 3, 255 - WheelPos * 3, 0 );
+        *r = WheelPos * 3;
+        *g = 255 - WheelPos * 3;
+        *b = 0;
       }
     }
     ```
- 
-    - Note que o input da função é um byte, ou seja, de `0..255` e o nosso analógico é um valor de `0..4095`
-    - Não possuímos a função  `setColor(char, r, char g, char b)`, a nossa função `wheel` deve retornar o RGB para enviarmos para a fila.
-    - A função deve possuir a seguinte prototipacacao 
     
     
+
     ```
-    void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b )`
     ```
 
 ## Rubrica
