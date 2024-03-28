@@ -32,7 +32,6 @@ void wheel(uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b);
 bool timer_0_callback(repeating_timer_t *rt) {
     adc_select_input(ADC_MUX_ID);
     uint16_t result = adc_read();
-    printf("%d\n", result);
 
     xQueueSendFromISR(xQueueADC, &result, 0);
     return true; // keep repeating
