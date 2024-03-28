@@ -1,4 +1,4 @@
-# 22b - AV2 - LED RGB
+# Simulado - AV - pico - LED RGB
 
 > LEIA TODOS OS PASSOS ANTES DE SAIR FAZENDO, TENHA UMA VISÃO GERAL DO TODO ANTES DE COMECAR.
 
@@ -8,7 +8,6 @@ Nesta avaliação vocês irão criar firmware que aciona um LED RGB de acordo co
 
 Periféricos:
 
-- PIO
 - ADC
 - Timer
 - PWM 
