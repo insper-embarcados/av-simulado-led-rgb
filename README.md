@@ -82,7 +82,7 @@ Onde:
     ```c
     // Input a value 0 to 255 to get a color value.
     // The colours are a transition r - g - b - back to r.
-    void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b )`
+    void wheel( uint WheelPos, uint8_t *r, uint8_t *g, uint8_t *b ) {
       WheelPos = 255 - WheelPos;
 
       if ( WheelPos < 85 ) {
@@ -103,11 +103,6 @@ Onde:
     }
     ```
     
-    
-
-    ```
-    ```
-
 ## Rubrica
 
 LED varia de acordo com potenciômetro respeitando a função `wheel` (gradual do vermelho, passando pelo roxo, azul, verde, amarelo, vermelho), com:
